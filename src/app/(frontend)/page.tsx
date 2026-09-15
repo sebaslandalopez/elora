@@ -21,6 +21,28 @@ const socialIconUrls = {
   email: 'https://www.figma.com/api/mcp/asset/cb7b3fb9-9021-4c68-9e92-b419415cfd12.svg',
 }
 const themeIconUrl = 'https://www.figma.com/api/mcp/asset/0d11d30d-b85c-4085-bb9b-3d63695f09cd.png'
+const brandBadges = [
+  {
+    name: 'Falabella',
+    src: 'https://www.figma.com/api/mcp/asset/07650ac9-b2d1-4893-ab34-a5d5ac48b768.png',
+    className: 'brand-badge falabella',
+  },
+  {
+    name: 'Shopify',
+    src: 'https://www.figma.com/api/mcp/asset/41c90134-24ae-4d48-8361-a2e2cc2f76f2.png',
+    className: 'brand-badge shopify',
+  },
+  {
+    name: 'WooCommerce',
+    src: 'https://www.figma.com/api/mcp/asset/b0a25de0-3b4c-4cec-9ffd-dcb59005c938.png',
+    className: 'brand-badge woocommerce',
+  },
+  {
+    name: 'Mercado Libre',
+    src: 'https://www.figma.com/api/mcp/asset/fff6ef8e-91fc-4a0c-bcaf-f0c1c40f579b.png',
+    className: 'brand-badge mercado-libre',
+  },
+]
 
 export const dynamic = 'force-dynamic'
 
@@ -86,6 +108,11 @@ export default async function HomePage() {
         {phoneImages.map(({ src, alt }) => (
           <div className="phone" key={src}>
             <Image alt={alt} src={src} width={210} height={425} />
+          </div>
+        ))}
+        {brandBadges.map(({ name, src, className }) => (
+          <div className={className} key={name}>
+            <Image alt={name} src={src} width={168} height={168} unoptimized />
           </div>
         ))}
       </section>
